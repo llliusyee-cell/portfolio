@@ -4670,6 +4670,13 @@ html,body{width:100%;max-width:none}
 #s2::before,#s4::before,#s5::before,#s6::before,#s7::before{
   content:"";position:absolute;left:0;right:0;top:0;height:70px;z-index:2;pointer-events:none;
   background:linear-gradient(0deg,rgba(251,247,241,0) 0,rgba(251,247,241,.5) 60%,rgba(251,247,241,.85) 100%)}
+
+/* v23 · TVC 人物按参考图缩放（约 470px 宽，贴右下） */
+@media (min-width:1181px){
+  #s4 .tvc-chibi-top{left:auto!important;top:auto!important;right:0!important;bottom:0!important;
+    width:79%!important;height:auto!important;max-height:none!important;
+    object-fit:contain!important;object-position:right bottom!important}
+}
 </style>
 </head>
 <body>
