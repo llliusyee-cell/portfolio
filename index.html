@@ -4594,6 +4594,69 @@ html,body{width:100%;max-width:none}
 
 /* v20 · TVC 页：背景与人物拆分为两张素材 */
 
+
+/* v21 · 详情小窗：媒体按内容比例放大，窗口更宽更高 */
+@media (min-width:761px){
+  .sheet,.sheet.comic{width:min(1180px,94vw);height:auto;min-height:min(560px,80svh);
+    max-height:92svh;padding-bottom:6px}
+  .sheet .sheet-body,.sheet.comic .sheet-body{padding:12px 12px 8px;gap:14px}
+  .sheet .smedia,.sheet.comic .smedia{display:flex;justify-content:center;align-items:flex-start;
+    background:none;border:0;padding:0;border-radius:0}
+  .sheet .smedia > #sv1,.sheet.comic .smedia > #sv1{
+    width:fit-content;max-width:100%;height:auto;aspect-ratio:auto;
+    max-height:min(72svh,640px);margin:0 auto;border:0;border-radius:14px;overflow:hidden;
+    background:#fff;box-shadow:0 18px 40px -30px rgba(0,0,0,.45)}
+  .sheet .smedia > #sv1 img,.sheet.comic .smedia > #sv1 img{
+    display:block;width:auto;height:auto;max-width:100%;max-height:min(72svh,640px);
+    object-fit:contain;margin:0 auto}
+  .sheet .smedia > #sv1:has(video){width:min(100%,calc(min(72svh,640px) * 16 / 9))}
+  .sheet .smedia > #sv1 video{width:100%;height:100%;max-height:min(72svh,640px);object-fit:contain;background:#000}
+  .sheet .smedia > #sv1 .lab{display:none}
+  .sheet .smedia > #sv1 .big{display:none}
+  .sheet .mstrip,.sheet.comic .mstrip{margin-top:12px;max-width:none}
+  .sheet .sh h3,.sheet.comic .sh h3{font-size:clamp(30px,3.4vw,52px)}
+}
+
+/* v21b · 强制媒体按内容放大 */
+@media (min-width:761px){
+  .sheet .smedia > #sv1,.sheet.comic .smedia > #sv1{
+    width:auto!important;height:auto!important;aspect-ratio:auto!important;
+    max-width:100%!important;max-height:min(72svh,640px)!important;
+    margin:0 auto!important;border:0!important;border-radius:14px;overflow:hidden;background:#fff}
+  .sheet .smedia > #sv1 > img,.sheet.comic .smedia > #sv1 > img{
+    position:relative!important;inset:auto!important;
+    width:auto!important;height:auto!important;max-width:100%!important;
+    max-height:min(72svh,640px)!important;object-fit:contain!important;display:block!important}
+}
+
+/* v21c · 窗口宽度跟随内容（方形图不再留大片白） */
+@media (min-width:761px){
+  .sheet,.sheet.comic{width:fit-content!important;min-width:min(720px,94vw)!important;
+    max-width:min(1200px,94vw)!important;height:auto!important;max-height:92svh!important}
+  .sheet .sheet-body,.sheet.comic .sheet-body{padding:10px 12px 6px!important}
+  .sheet .smedia > #sv1,.sheet.comic .smedia > #sv1{max-height:min(60svh,540px)!important}
+  .sheet .smedia > #sv1 > img,.sheet.comic .smedia > #sv1 > img{max-height:min(60svh,540px)!important}
+}
+
+/* v21d · 视频类：按 16:9 填满窗口宽度 */
+@media (min-width:761px){
+  .sheet .smedia > #sv1:has(video),.sheet.comic .smedia > #sv1:has(video){
+    width:100%!important;min-height:0!important}
+  .sheet .smedia > #sv1 > video,.sheet.comic .smedia > #sv1 > video{
+    width:100%!important;height:auto!important;aspect-ratio:16/9;max-height:min(60svh,540px)!important;
+    object-fit:contain!important;background:#000;display:block!important}
+}
+
+/* v21e · 视频/封面类（data-fit=cover）按 16:9 撑满 */
+@media (min-width:761px){
+  .sheet .smedia > #sv1[data-fit="cover"],.sheet.comic .smedia > #sv1[data-fit="cover"]{
+    width:100%!important;height:auto!important;aspect-ratio:16/9!important;
+    max-height:min(60svh,540px)!important;min-height:0!important}
+  .sheet .smedia > #sv1[data-fit="cover"] > video,
+  .sheet .smedia > #sv1[data-fit="cover"] > img.work-img{
+    width:100%!important;height:100%!important;max-height:none!important;
+    object-fit:contain!important;display:block!important;position:relative!important;inset:auto!important}
+}
 </style>
 </head>
 <body>
