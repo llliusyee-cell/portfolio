@@ -385,7 +385,7 @@ body::before{
 .data .cap{background:var(--ink);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:.06em;
   display:flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums}
 .df{padding:clamp(10px,1.6vh,15px) clamp(9px,1.2vw,16px) clamp(11px,1.8vh,16px)}
-.df dt{font-size:8.5px;letter-spacing:.2em;color:var(--or);font-weight:800;margin-bottom:5px;
+.df dt{font-size:8.5px;letter-spacing:.2em;color:var(--or-ink);font-weight:800;margin-bottom:5px;
   white-space:nowrap}
 .df dd{font-size:clamp(12px,1.2vw,14.5px);font-weight:800;letter-spacing:.01em;line-height:1.25}
 .df dd small{display:block;font-weight:500;font-size:9px;color:var(--gray);letter-spacing:.1em;
@@ -508,12 +508,6 @@ body::before{
   radial-gradient(620px 460px at 0% 100%,rgba(255,106,43,.12),transparent 66%),
   #F5EEE4}
 .talk{background:transparent}
-#s6::after{content:"";position:absolute;left:calc(var(--pad) + 8%);top:110px;width:44%;aspect-ratio:1;
-  border:1px solid rgba(85,180,242,.28);border-radius:50%;transform:rotate(-18deg);
-  pointer-events:none;z-index:0}
-#s7::after{content:"";position:absolute;right:0;top:0;width:38%;height:100%;pointer-events:none;z-index:0;opacity:.7;
-  background:repeating-linear-gradient(135deg,rgba(85,180,242,.10) 0 1px,transparent 1px 15px);
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%)}
 #s8::after{content:"";position:absolute;right:3%;top:16%;width:44vw;max-width:560px;aspect-ratio:1;
   border:1px solid rgba(85,180,242,.24);border-radius:50%;pointer-events:none;z-index:0}
 .ip3dwrap,.pipe,.talk .wrap{position:relative;z-index:1}
@@ -545,7 +539,7 @@ body::before{
 .chap-hd{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;
   padding:clamp(26px,4.2vw,48px) var(--pad) clamp(12px,2vw,22px)}
 .chap-hd .hl{display:flex;align-items:baseline;gap:clamp(9px,1.4vw,18px);flex-wrap:wrap}
-.chap-hd .k{font-size:13.5px;letter-spacing:.24em;color:var(--or);font-weight:800;
+.chap-hd .k{font-size:13.5px;letter-spacing:.24em;color:var(--or-ink);font-weight:800;
   font-variant-numeric:tabular-nums;padding-bottom:5px}
 .chap-hd h2{font-size:clamp(34px,4.4vw,80px);line-height:1;font-weight:900;letter-spacing:-.03em}
 .chap-hd .en{font-size:12.5px;letter-spacing:.22em;color:var(--gray);padding-bottom:5px;
@@ -625,7 +619,7 @@ body::before{
 /* 当前卡：把序号换成明确的「看详情」入口提示 */
 .gcard.on .gcap span{display:none}
 .gcard.on .gcap::after{content:"看详情 ↗";flex:none;font-size:7.5px;font-weight:800;
-  letter-spacing:.1em;color:var(--or);animation:gcapPulse 1.9s ease-in-out infinite}
+  letter-spacing:.1em;color:var(--or-ink);animation:gcapPulse 1.9s ease-in-out infinite}
 .gcard.on:hover .gcap::after{animation:none;opacity:1}
 @keyframes gcapPulse{0%,100%{opacity:.52}50%{opacity:1}}
 @media(max-width:760px){ .gcard.on .gcap::after{content:"详情 ↗";letter-spacing:.02em} }
@@ -649,7 +643,7 @@ body::before{
 .gdetail .dfacts{display:grid;gap:0;margin-top:clamp(12px,1.8vh,18px);border-top:1px solid var(--ink)}
 .gdetail .dfacts>div{display:grid;grid-template-columns:38px minmax(0,1fr);gap:10px;
   padding:8px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.gdetail .dfacts dt{font-size:8.5px;letter-spacing:.16em;color:var(--or);font-weight:800}
+.gdetail .dfacts dt{font-size:8.5px;letter-spacing:.16em;color:var(--or-ink);font-weight:800}
 .gdetail .dfacts dd{font-size:11.5px;font-weight:700;line-height:1.6}
 .gdetail .dmore{display:inline-flex;align-items:center;gap:9px;margin-top:clamp(12px,1.8vh,18px);
   font-size:10.5px;letter-spacing:.16em;font-weight:800;border:1.5px solid var(--ink);
@@ -722,7 +716,7 @@ body::before{
 .pc-body{padding:13px 16px 15px;display:flex;flex-direction:column;gap:8px;flex:1;position:relative;z-index:1}
 .pc-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
 .pc-ttl{font-size:clamp(17px,1.5vw,22px);font-weight:900;letter-spacing:-.01em;line-height:1.15}
-.pc-no{font-size:12px;font-weight:800;color:var(--or);letter-spacing:.1em;font-variant-numeric:tabular-nums}
+.pc-no{font-size:12px;font-weight:800;color:var(--or-ink);letter-spacing:.1em;font-variant-numeric:tabular-nums}
 .pc-desc{font-size:13px;line-height:1.62;color:var(--ink2);
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .pc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
@@ -1358,6 +1352,13 @@ body::before{
 .endfull-hintrow{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 10px}
 .endfull-hint{margin:0;font-size:14px;letter-spacing:.12em;color:var(--ink2);
   background:rgba(255,255,255,.66);padding:5px 9px;border:1px solid rgba(23,23,26,.08)}
+.endfull-loading{position:absolute;left:50%;bottom:clamp(92px,14vh,150px);transform:translateX(-50%);
+  z-index:5;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid rgba(23,23,26,.14);
+  background:rgba(255,255,255,.9);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  font-size:11px;letter-spacing:.14em;color:var(--ink2);font-weight:700;pointer-events:none}
+.endfull-loading[hidden]{display:none}
+.endfull-loading i{width:7px;height:7px;border-radius:50%;background:var(--or);animation:endPulse 1s ease-in-out infinite}
+@keyframes endPulse{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
 .endfull-replay{display:none;flex:none;font-size:11px;letter-spacing:.16em;font-weight:800;color:var(--ink);
   border:1px solid var(--ink);background:rgba(247,243,234,.82);padding:7px 10px;cursor:pointer;
   transition:background .25s,color .25s}
@@ -1408,7 +1409,7 @@ body::before{
 .sheet-top{position:sticky;top:0;z-index:6;display:flex;align-items:center;gap:14px;
   padding:11px var(--pad);background:rgba(255,255,255,.95);
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.sheet-top .sno{font-size:10.5px;letter-spacing:.2em;color:var(--or);font-weight:800;
+.sheet-top .sno{font-size:10.5px;letter-spacing:.2em;color:var(--or-ink);font-weight:800;
   font-variant-numeric:tabular-nums;flex:none}
 .sheet-top .stc{font-size:10.5px;letter-spacing:.15em;color:var(--gray);flex:1;min-width:0;
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -1437,13 +1438,38 @@ body::before{
 .sfacts{margin-top:clamp(16px,2.2vw,24px);border-top:1px solid var(--ink)}
 .sfacts>div{display:grid;grid-template-columns:62px minmax(0,1fr);gap:14px;align-items:baseline;
   padding:11px 0;border-bottom:1px solid var(--line)}
-.sfacts dt{font-size:10.5px;letter-spacing:.18em;color:var(--or);font-weight:800}
+.sfacts dt{font-size:10.5px;letter-spacing:.18em;color:var(--or-ink);font-weight:800}
 .sfacts dd{font-size:16px;font-weight:700;letter-spacing:.01em;line-height:1.65}
 .stags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
 .stags li{font-size:13px;letter-spacing:.1em;color:var(--ink2);border:1px solid var(--line);
   padding:5px 10px;background:var(--paper2)}
 .snote{margin-top:clamp(18px,2.4vw,26px);font-size:14px;line-height:1.95;color:var(--gray);
   border-left:2px solid var(--or-l);padding-left:11px}
+
+/* ---- 详情页：项目资产图墙（v24） ---- */
+.sgal{width:100%;max-width:min(1680px,94vw);margin:0 auto;
+  padding:clamp(10px,1.6vw,20px) var(--pad) clamp(30px,4vw,54px);border-top:1px solid var(--line)}
+.sgal[hidden]{display:none}
+.sgal-hd{display:flex;align-items:baseline;gap:12px;margin-bottom:clamp(12px,1.6vw,18px)}
+.sgal-k{font-size:11px;letter-spacing:.18em;font-weight:800;color:var(--or-ink)}
+.sgal-n{font-size:10px;letter-spacing:.12em;color:var(--gray)}
+.sgal-grid{columns:2;column-gap:clamp(10px,1.4vw,18px)}
+.sgal-item{display:block;width:100%;margin:0 0 clamp(10px,1.4vw,18px);
+  border:1px solid var(--line);background:var(--paper2);overflow:hidden;
+  break-inside:avoid;page-break-inside:avoid;-webkit-column-break-inside:avoid}
+.sgal-open{display:block;background:#fff;cursor:zoom-in}
+.sgal-open:focus-visible{outline:2px solid var(--or-ink);outline-offset:-2px}
+.sgal-item img{display:block;width:100%;height:auto;background:#fff}
+.sgal-item.tall img{width:100%;height:52svh;max-height:520px;object-fit:contain;background:#F2EEE7}
+.sgal-item figcaption{display:flex;align-items:baseline;gap:8px;padding:8px 10px;
+  border-top:1px solid var(--line);background:#fff;min-width:0}
+.sgal-item figcaption span{flex:none;font-size:9px;letter-spacing:.16em;color:var(--or-ink);font-weight:800}
+.sgal-item figcaption b{font-size:12px;line-height:1.4;font-weight:700;color:var(--ink);overflow-wrap:anywhere}
+@media(max-width:760px){
+  .sgal{padding:8px var(--pad) 24px}
+  .sgal-grid{columns:1}
+  .sgal-item figcaption b{font-size:12.5px}
+}
 
 /* ---- 电商：主图切换条 ---- */
 .mstrip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:12px}
@@ -1488,7 +1514,7 @@ body::before{
 .dtoc{margin-top:clamp(18px,2.4vw,26px);border-top:1px solid var(--ink);padding-top:14px}
 .dtoc[hidden]{display:none}
 .dtoc-h{display:block;font-size:9.5px;letter-spacing:.18em;color:var(--gray);margin-bottom:11px}
-.dtoc-h b{color:var(--or);font-weight:800}
+.dtoc-h b{color:var(--or-ink);font-weight:800}
 .dtoc-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
 .dtoc-g.wide{grid-template-columns:repeat(3,minmax(0,1fr))}
 .dtoc-g.wide button{aspect-ratio:16/9}
@@ -2687,6 +2713,10 @@ p,.sec-d,.chap-d,.step p,.ip-side p,.reel-desc,.endfull-desc,.endfull-services,
 .hero-home .hero-contact .ar{color:var(--or)}
 .hero-home .hero-contact:hover{background:#17171a;border-color:#17171a;color:#fff}
 .hero-home .hero-contact:hover .ar{color:var(--or)}
+.hero-home .hero-f .hero-replay{flex:0 0 auto;min-height:44px;padding:0 18px;font-size:13px;cursor:pointer;
+  font-family:inherit;background:rgba(255,253,248,.9);border-color:rgba(23,23,26,.18);color:#17171a;box-shadow:none}
+.hero-home .hero-f .hero-replay:hover{background:#17171a;border-color:#17171a;color:#fff;transform:translateY(-2px)}
+.hero-home .hero-f .hero-replay[hidden]{display:none}
 .hero-home .hero-rec{position:absolute;z-index:3;top:calc(var(--nav) + 10vh);right:clamp(24px,8vw,140px);
   display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:2px;
   background:rgba(255,253,248,.6);color:#211713;font-size:12px;font-weight:800;letter-spacing:.12em;
@@ -3058,7 +3088,7 @@ body.s1-on{--rail:0px}
 .index-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;
   padding-top:7px;border-top:1px solid rgba(65,43,29,.24);font-size:11.5px;font-weight:700;color:#4d3d34}
 .index-meta b{color:var(--or-ink);font-size:15px;font-weight:900}
-.index-meta i{font-style:normal;color:var(--or);font-weight:900;margin-left:3px}
+.index-meta i{font-style:normal;color:var(--or-ink);font-weight:900;margin-left:3px}
 .index-meta span:last-child{border:1px solid rgba(65,43,29,.32);border-radius:999px;padding:4px 9px;background:rgba(255,253,248,.45);white-space:nowrap}
 .index-foot{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:clamp(12px,2vh,22px);
   font-size:12px;color:#5b4a3e;letter-spacing:.1em;position:relative;z-index:5}
@@ -4208,7 +4238,7 @@ html,body{width:100%;max-width:none}
 .sheet.comic .sh h3{font-size:clamp(30px,3.2vw,46px);line-height:1.12}
 .sheet.comic .sdesc{margin-top:14px;font-size:15px;line-height:1.9}
 .sheet.comic .sdesc::before{content:"简介";display:block;margin-bottom:5px;font-size:10.5px;
-  letter-spacing:.18em;color:var(--or);font-weight:800}
+  letter-spacing:.18em;color:var(--or-ink);font-weight:800}
 .sheet.comic .sfacts{margin-top:18px}
 .sheet.comic .sfacts>div:nth-child(2),.sheet.comic .sfacts>div:nth-child(3){display:none}
 .sheet.comic .sfacts>div{padding:9px 0}
@@ -4228,6 +4258,12 @@ html,body{width:100%;max-width:none}
 .sheet.comic .snav{max-width:none;margin:0;padding:10px 22px 14px;border-top:1px solid var(--line)}
 .sheet.comic .snav button{padding:7px 11px;font-size:10px;letter-spacing:.1em}
 .sheet.comic .snav .sp{display:none}
+
+.sheet.comic .sgal{max-width:none;margin:0;padding:4px 26px 20px}
+.sheet.comic .sgal-hd{margin-bottom:12px}
+@media(max-width:760px){
+  .sheet.comic .sgal{padding:2px 16px 16px}
+}
 
 @media(max-width:760px){
   .sheet.comic{width:94vw;max-height:88svh;border-radius:20px}
@@ -4664,18 +4700,35 @@ html,body{width:100%;max-width:none}
   mask-image:linear-gradient(180deg,transparent 0,rgba(0,0,0,.85) 6%,#000 12%,#000 88%,rgba(0,0,0,.85) 94%,transparent 100%);
 }
 /* 章节之间再补一层柔和的纸色渐变，压住接缝 */
-#s2::after,#s4::after,#s5::after,#s6::after,#s7::after{
+#s2::after,#s4::after,#s5::after,#s6::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:90px;z-index:2;pointer-events:none;
   background:linear-gradient(180deg,rgba(251,247,241,0) 0,rgba(251,247,241,.55) 55%,rgba(251,247,241,.92) 100%)}
 #s2::before,#s4::before,#s5::before,#s6::before,#s7::before{
   content:"";position:absolute;left:0;right:0;top:0;height:70px;z-index:2;pointer-events:none;
   background:linear-gradient(0deg,rgba(251,247,241,0) 0,rgba(251,247,241,.5) 60%,rgba(251,247,241,.85) 100%)}
+/* v25：s6 接缝渐变退到内容层下，避免 90px 纸色盖住底部 6 张缩略图 */
+#s6::after{z-index:0}
 
 /* v23 · TVC 人物按参考图缩放（约 470px 宽，贴右下） */
 @media (min-width:1181px){
   #s4 .tvc-chibi-top{left:auto!important;top:auto!important;right:0!important;bottom:0!important;
     width:70%!important;height:auto!important;max-height:none!important;
     object-fit:contain!important;object-position:right bottom!important}
+}
+/* v24.6 尾页：桌面视频恢复铺满上下横条之间，保持原构图；不再缩镜/渐变 */
+@media (min-width:1181px){
+  .endfull-video,.endfull-still{top:max(var(--nav),56px)!important;bottom:var(--bar)!important;
+    left:0!important;right:0!important;width:100%!important;
+    height:calc(100% - max(var(--nav),56px) - var(--bar))!important;
+    object-fit:cover!important;object-position:center 44%!important;transform:none!important}
+  .endfull-media{background:#f7eee5!important}
+  .endfull-media::after{display:none!important}
+  /* v25：视频只铺 nav→bar，露出的上下条改纸色；边缘 30px 柔化，避免硬切 */
+  .endfull-fade-t,.endfull-fade-b{display:block;z-index:3}
+  .endfull-fade-t{top:max(var(--nav),56px);height:30px;
+    background:linear-gradient(180deg,#f7eee5,rgba(247,238,229,0))}
+  .endfull-fade-b{bottom:var(--bar);height:30px;
+    background:linear-gradient(0deg,#f7eee5,rgba(247,238,229,0))}
 }
 </style>
 </head>
@@ -4793,6 +4846,7 @@ html,body{width:100%;max-width:none}
           <div class="hero-f rv" style="--d:.3s">
             <a class="enter" href="#s1">向下进入片场<span class="ar" aria-hidden="true">▶</span></a>
             <a class="enter hero-contact" href="#s8">直接联系<span class="ar" aria-hidden="true">◆</span></a>
+            <button class="enter hero-replay" id="hvReplay" type="button" hidden>↻ 再看一遍</button>
           </div>
         </div>
         <div class="hero-rec rv" style="--d:.24s"><i></i>REC <span>PLATE 01 / 底稿</span></div>
@@ -5194,15 +5248,18 @@ html,body{width:100%;max-width:none}
   <!-- ============ 05 联系：全屏结尾 ============ -->
   <section class="talk endfull" id="s8" data-ch="05" data-kind="blinds">
     <div class="endfull-media" aria-hidden="true">
-      <video class="endfull-video" id="endv" muted playsinline preload="auto"
-             poster="assets/video/ending-v2-poster.jpg">
-        <source src="assets/video/ending-v3-1080.mp4" type="video/mp4">
-      </video>
+      <video class="endfull-video" id="endv" muted playsinline preload="none"
+             poster="assets/video/ending-v2-poster.jpg"
+             data-src-hevc="assets/video/ending-v2-4k.mp4"
+             data-src-4k="assets/video/ending-v5-4k.mp4"
+             data-src-mid="assets/video/ending-v4-1440.mp4"
+             data-src-narrow="assets/video/ending-v4-1080.mp4"></video>
       <img class="endfull-still" id="endstill" src="assets/video/ending-v2-qr.jpg"
            alt="结尾相纸：微信二维码，扫码添加刘思雨" width="1920" height="1080" decoding="async">
       <div class="endfull-shade"></div>
       <div class="endfull-fade-t"></div>
       <div class="endfull-fade-b"></div>
+      <div class="endfull-loading" id="endload" hidden><i></i>视频加载中…</div>
       <img class="endfull-frame-left" src="assets/end/endframe-left.png" alt="" width="580" height="620" decoding="async">
       <img class="endfull-frame-bottom" src="assets/end/endframe-bottom.png" alt="" width="1220" height="117" decoding="async">
       <img class="endfull-frame-reel" src="assets/end/endframe-reel-v7.png" alt="" width="600" height="482" decoding="async">
@@ -5281,6 +5338,10 @@ html,body{width:100%;max-width:none}
         </div>
       </div>
     </div>
+    <section class="sgal" id="sgal" aria-label="项目资产图" hidden>
+      <div class="sgal-hd"><span class="sgal-k">ASSETS / 项目资产</span><span class="sgal-n" id="sgaln"></span></div>
+      <div class="sgal-grid" id="sgalgrid"></div>
+    </section>
     <section class="sdet" id="sdet" aria-label="完整详情页" hidden>
       <div class="sdet-h">
         <span class="sk">完整详情页 · 原图直出</span>
@@ -5514,14 +5575,20 @@ html,body{width:100%;max-width:none}
   var hv=d.getElementById("hv");
   if(hv){
     var hvEnded=false;
-    var showVid=function(){ if(hvEnded) return; hv.classList.add("on"); };
+    var hvReplay=d.getElementById("hvReplay");
+    var showVid=function(){ if(hvEnded) return; hv.classList.add("on"); if(hvReplay) hvReplay.hidden=true; };
     /* 首屏先用首页定格图；视频开始播放后再淡入，结束后淡出回高清定格图 */
     hv.addEventListener("loadeddata",showVid);
     hv.addEventListener("playing",showVid);
-    hv.addEventListener("ended",function(){ hvEnded=true; hv.classList.remove("on"); });
+    hv.addEventListener("ended",function(){ hvEnded=true; hv.classList.remove("on"); if(hvReplay) hvReplay.hidden=false; });
     hv.addEventListener("error",function(){ hv.classList.remove("on"); });
     if(hv.readyState>=2) showVid();
     var tryPlay=function(){ if(hvEnded) return; var p=hv.play(); if(p&&p.catch) p.catch(function(){}); };
+    if(hvReplay) hvReplay.addEventListener("click",function(){
+      hvEnded=false; hv.classList.remove("on"); hvReplay.hidden=true;
+      try{ hv.currentTime=0; }catch(_){}
+      var p=hv.play(); if(p&&p.catch) p.catch(function(){});
+    });
     var stillNow=/[?&]still=/.test(location.search);
     var reduceNow=window.matchMedia("(prefers-reduced-motion:reduce)").matches;
     var conn=navigator.connection;
@@ -5745,16 +5812,101 @@ html,body{width:100%;max-width:none}
      desc:"从角色到商业落地：角色设计、表情动作、基础视觉、品牌应用、商业空间、3D 三视图，一套六册。",
      tags:["IP 系统","角色设计","商业空间","3D 三视图"]}
   ];
+
+  /* v24：详情页资产（b/c 为详情小图；gal 为项目资产图墙） */
+  var DETAIL_ASSETS={
+  7:{b:"assets/tvc/detail/p-07-d1.webp",c:"assets/tvc/p-07-1.webp",gal:[
+    {s:"assets/tvc/p-07-1.webp",w:1280,h:720,t:"场景",n:"成片"},
+    {s:"assets/tvc/detail/p-07-d1.webp",w:1600,h:899,t:"角色",n:"汽水女主"},
+    {s:"assets/tvc/detail/p-07-d2.webp",w:1600,h:899,t:"角色",n:"汽水男"},
+    {s:"assets/tvc/detail/p-07-d3.webp",w:1600,h:899,t:"角色",n:"NPC 群像"},
+  ]},
+  8:{b:"assets/tvc/detail/p-08-d1.webp",c:"assets/tvc/detail/p-08-d2.webp",gal:[
+    {s:"assets/tvc/detail/p-08-d1.webp",w:1600,h:899,t:"角色",n:"汽车主角"},
+    {s:"assets/tvc/detail/p-08-d2.webp",w:1600,h:900,t:"场景",n:"夜景"},
+    {s:"assets/tvc/detail/p-08-d3.webp",w:1600,h:899,t:"场景",n:"道路"},
+    {s:"assets/tvc/detail/p-08-d4.webp",w:1600,h:900,t:"场景",n:"绿灯"},
+  ]},
+  9:{b:"assets/tvc/detail/p-09-d1.webp",c:"assets/tvc/detail/p-09-d3.webp",gal:[
+    {s:"assets/tvc/detail/p-09-d1.webp",w:1600,h:899,t:"角色",n:"长发公主"},
+    {s:"assets/tvc/detail/p-09-d2.webp",w:1600,h:899,t:"角色",n:"小红帽"},
+    {s:"assets/tvc/detail/p-09-d3.webp",w:1600,h:899,t:"场景",n:"街道"},
+    {s:"assets/tvc/detail/p-09-d4.webp",w:1600,h:899,t:"场景",n:"阳台"},
+  ]},
+  10:{b:"assets/tvc/detail/p-10-d1.webp",c:"assets/tvc/detail/p-10-d3.webp",gal:[
+    {s:"assets/tvc/detail/p-10-d1.webp",w:1600,h:899,t:"角色",n:"唐僧"},
+    {s:"assets/tvc/detail/p-10-d2.webp",w:1280,h:720,t:"角色",n:"妖"},
+    {s:"assets/tvc/detail/p-10-d3.webp",w:1600,h:902,t:"场景",n:"内部画面"},
+    {s:"assets/tvc/detail/p-10-d4.webp",w:1600,h:899,t:"关键帧",n:"镜 1"},
+  ]},
+  11:{b:"assets/tvc/detail/p-11-d1.webp",c:"assets/tvc/detail/p-11-d3.webp",gal:[
+    {s:"assets/tvc/detail/p-11-d1.webp",w:1600,h:900,t:"角色",n:"眼镜男主"},
+    {s:"assets/tvc/detail/p-11-d2.webp",w:1600,h:899,t:"角色",n:"长老"},
+    {s:"assets/tvc/detail/p-11-d3.webp",w:1600,h:899,t:"场景",n:"丛林"},
+    {s:"assets/tvc/detail/p-11-d4.webp",w:1600,h:899,t:"场景",n:"营地"},
+  ]},
+  12:{b:"assets/works/detail/work-12-d1.webp",c:"assets/works/detail/work-12-d2.webp",gal:[
+    {s:"assets/works/detail/work-12-d1.webp",w:1600,h:900,t:"场景",n:"渡劫天台"},
+    {s:"assets/works/detail/work-12-d2.webp",w:1600,h:900,t:"道具",n:"空间储物主戒"},
+    {s:"assets/works/detail/work-12-d3.webp",w:1600,h:900,t:"角色",n:"老格鲁"},
+    {s:"assets/works/detail/work-12-d4.webp",w:1600,h:900,t:"角色",n:"长青 · 渡劫版"},
+    {s:"assets/works/detail/work-12-d5.webp",w:1600,h:900,t:"角色",n:"长青 · 魂魄版"},
+    {s:"assets/works/detail/work-12-d6.webp",w:1600,h:900,t:"角色",n:"雷炁灵鸟"},
+  ]},
+  13:{b:"assets/works/detail/work-13-d1.webp",c:"assets/works/detail/work-13-d2.webp",gal:[
+    {s:"assets/works/detail/work-13-d1.webp",w:1600,h:900,t:"场景",n:"深夜出租屋"},
+    {s:"assets/works/detail/work-13-d2.webp",w:1600,h:900,t:"场景",n:"落地荒漠"},
+    {s:"assets/works/detail/work-13-d3.webp",w:720,h:1280,t:"道具",n:"快递箱与头盔"},
+    {s:"assets/works/detail/work-13-d4.webp",w:1280,h:720,t:"角色",n:"罗十三"},
+    {s:"assets/works/detail/work-13-d5.webp",w:1280,h:720,t:"角色",n:"闻蛰 · 现实"},
+    {s:"assets/works/detail/work-13-d6.webp",w:1600,h:900,t:"角色",n:"闻蛰 · 游戏"},
+  ]},
+  14:{b:"assets/works/detail/work-14-d1.webp",c:"assets/works/detail/work-14-d2.webp",gal:[
+    {s:"assets/works/detail/work-14-d1.webp",w:1280,h:720,t:"场景",n:"绣庄外观 · 雨夜"},
+    {s:"assets/works/detail/work-14-d2.webp",w:1600,h:900,t:"场景",n:"大堂"},
+    {s:"assets/works/detail/work-14-d3.webp",w:1280,h:720,t:"场景",n:"里间"},
+    {s:"assets/works/detail/work-14-d4.webp",w:1600,h:900,t:"角色",n:"阿织"},
+    {s:"assets/works/detail/work-14-d5.webp",w:1600,h:900,t:"角色",n:"苏月娥"},
+    {s:"assets/works/detail/work-14-d6.webp",w:1600,h:900,t:"角色",n:"退伍老人"},
+  ]},
+  15:{b:"assets/works/detail/work-15-d1.webp",c:"assets/works/detail/work-15-d2.webp",gal:[
+    {s:"assets/works/detail/work-15-d1.webp",w:1600,h:900,t:"场景",n:"厨房"},
+    {s:"assets/works/detail/work-15-d2.webp",w:1600,h:900,t:"场景",n:"村口夜晚"},
+    {s:"assets/works/detail/work-15-d3.webp",w:1600,h:900,t:"道具",n:"山海经内页"},
+    {s:"assets/works/detail/work-15-d4.webp",w:1536,h:1024,t:"角色",n:"沈野"},
+    {s:"assets/works/detail/work-15-d5.webp",w:1536,h:1024,t:"角色",n:"阿饕"},
+    {s:"assets/works/detail/work-15-d6.webp",w:1600,h:900,t:"道具",n:"醋溜包菜"},
+  ]},
+  16:{b:"assets/works/detail/work-16-d1.webp",c:"assets/works/detail/work-16-d2.webp",gal:[
+    {s:"assets/works/detail/work-16-d1.webp",w:1600,h:900,t:"场景",n:"废土公路"},
+    {s:"assets/works/detail/work-16-d2.webp",w:1448,h:1086,t:"场景",n:"沙尘夜路"},
+    {s:"assets/works/detail/work-16-d3.webp",w:1600,h:900,t:"场景",n:"肉红裂隙"},
+    {s:"assets/works/detail/work-16-d4.webp",w:1600,h:900,t:"角色",n:"赵公明"},
+    {s:"assets/works/detail/work-16-d5.webp",w:1600,h:900,t:"角色",n:"黑虎"},
+    {s:"assets/works/detail/work-16-d6.webp",w:1600,h:900,t:"角色",n:"恶鬼兵"},
+  ]},
+  };
+
   function p2n(n){ return n<10 ? "0"+n : ""+n; }
   /* 电商套图：走真实素材目录 assets/ecom/<slug>/（m=主图 d=详情页） */
   function eimg(slug,f){ return "assets/ecom/"+slug+"/"+f+".webp"; }
   function wimg(w,k){
     if(w.slug){ return eimg(w.slug, (k==="b"?"m2":k==="c"?"m3":"m1")); }
+    var da=DETAIL_ASSETS[w.n];
+    if(da&&k==="b") return da.b;
+    if(da&&k==="c") return da.c;
     if(w.n>=7&&w.n<=11){ return "assets/tvc/p-"+p2n(w.n)+"-"+(k==="b"?2:k==="c"?3:1)+".webp"; }
     return "assets/works/work-"+p2n(w.n)+"-"+(k||"a")+".webp";
   }
   function imgTag(w,k){
-    return '<img class="work-img" src="'+wimg(w,k)+'" alt="'+w.name+' · 实际作品图" loading="lazy" decoding="async">';
+    var alt=w.name+" · 实际作品图", da=DETAIL_ASSETS[w.n];
+    if(da&&(k==="b"||k==="c")){
+      var src=(k==="b"?da.b:da.c);
+      for(var i=0;i<da.gal.length;i++){
+        if(da.gal[i].s===src){ alt=w.name+" · "+da.gal[i].t+" · "+da.gal[i].n; break; }
+      }
+    }
+    return '<img class="work-img" src="'+wimg(w,k)+'" alt="'+alt+'" loading="lazy" decoding="async">';
   }
   var WORK_VIDEO={7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1};
   function wvideo(w){
@@ -6575,6 +6727,7 @@ html,body{width:100%;max-width:none}
       sdet=d.getElementById("sdet"), sdetn=d.getElementById("sdetn"),
       dflow=d.getElementById("dflow"), mstrip=d.getElementById("mstrip"),
       sv2w=d.getElementById("sv2w"), mhint2=d.getElementById("mhint2"),
+      sgal=d.getElementById("sgal"), sgalgrid=d.getElementById("sgalgrid"), sgaln=d.getElementById("sgaln"),
       dtoc=d.getElementById("dtoc"), dtocg=d.getElementById("dtocg"), dtocn=d.getElementById("dtocn"),
       sprev=d.getElementById("sprev"), snext=d.getElementById("snext"), sx=d.getElementById("sx"),
       sheetmask=d.getElementById("sheetmask"),
@@ -6682,6 +6835,29 @@ html,body{width:100%;max-width:none}
     });
   }
 
+  /* ---- 详情页：项目资产图墙（TVC / 漫剧） ---- */
+  function renderAssetGallery(w,on){
+    if(!sgal||!sgalgrid) return;
+    var da=DETAIL_ASSETS[w.n];
+    if(!on||!da||!da.gal||!da.gal.length){
+      sgal.hidden=true; sgalgrid.innerHTML=""; return;
+    }
+    var h="", types=[], seen={};
+    for(var i=0;i<da.gal.length;i++){
+      var g=da.gal[i];
+      if(!seen[g.t]){ seen[g.t]=1; types.push(g.t); }
+      h+='<figure class="sgal-item'+(g.h>g.w?' tall':'')+'">'
+        +'<a class="sgal-open" href="'+g.s+'" target="_blank" rel="noopener"'
+        +' aria-label="查看大图：'+w.name+' · '+g.t+' · '+g.n+'">'
+        +'<img src="'+g.s+'" alt="'+w.name+' · '+g.t+' · '+g.n+'" width="'+g.w+'" height="'+g.h
+        +'" loading="lazy" decoding="async"></a>'
+        +'<figcaption><span>'+g.t+'</span><b>'+g.n+'</b></figcaption></figure>';
+    }
+    sgalgrid.innerHTML=h;
+    if(sgaln) sgaln.textContent=da.gal.length+" 张 · "+types.join(" / ");
+    sgal.hidden=false;
+  }
+
   function fillSheet(i,opt){
     stopSheetMedia();
     var w=WORKS[i]; cur=i;
@@ -6716,8 +6892,12 @@ html,body{width:100%;max-width:none}
         : (wvideo(w)
           ? "实际项目 · 点击主图可播放作品片段；下方为分镜与资产细节。"
           : "实际项目 · 作品图按「主图 / 细节 / 场景」呈现。"));
+    renderAssetGallery(w,true);
     var tones=[w.tone,"b","k"], keys=["a","b","c"],
-        labels=eco?["主图 01","主图 02","主图 03"]:["主图 / 封面","细节 / 分镜","场景 / 资产"];
+        da=DETAIL_ASSETS[w.n],
+        labels=eco?["主图 01","主图 02","主图 03"]
+          :(da?["主图 / 封面","角色 / 三视图","场景 / 资产"]
+              :["主图 / 封面","细节 / 分镜","场景 / 资产"]);
     if(comic) labels[0]="封面 / "+w.ep;
     for(var k=0;k<svs.length;k++){
       if(!svs[k]) continue;
@@ -6899,6 +7079,14 @@ html,body{width:100%;max-width:none}
     if(e.key==="ArrowLeft"){ go(-1); }
     else if(e.key==="ArrowRight"){ go(1); }
   });
+  /* 原生 video 控件会吞掉 Escape，捕获阶段先关详情层 */
+  d.addEventListener("keydown",function(e){
+    if(e.key==="Escape" && sheetOpen){ e.stopPropagation(); closeSheet(); }
+  },true);
+  /* 原生 video 控件聚焦时 keydown 可能被吞，keyup 一定冒泡 */
+  d.addEventListener("keyup",function(e){
+    if(e.key==="Escape" && sheetOpen){ closeSheet(); }
+  },true);
 
   /* ================= 导航：切场 ================= */
   /* 不做整页遮罩。点导航 = 硬切到下一页，然后这一页的内容自己运镜进画。 */
@@ -7168,31 +7356,85 @@ html,body{width:100%;max-width:none}
     ss.forEach(function(s){ io.observe(s); });
   })();
 
-  /* 尾页：带 QR 的成片 → 结束重播；reduced-motion / ?still 用 QR 静帧兜底 */
+  /* 尾页：带 QR 的成片 → 结束重播；reduced-motion / ?still 用 QR 静帧兜底
+     v24.1：桌面优先用原片（4K HEVC，支持的浏览器），否则 4K H.264；平板 1440p，手机 1080p
+     进入尾页前 1.5 屏才加载，首屏不再预下整段视频 */
   (function(){
     var ev=d.getElementById("endv"), st=d.getElementById("endstill"),
-        rep=d.getElementById("endreplay");
+        rep=d.getElementById("endreplay"), load=d.getElementById("endload");
     var stillMode=/[?&]still\b/.test(location.search);
-    if(st&&(REDUCE||stillMode)){ st.classList.add("on"); if(ev) ev.style.display="none"; return; }
+    /* 手机端不放视频：和手机首页一致，直接用尾页 QR 静帧 */
+    var mobileEnd=window.matchMedia("(max-width:760px), (max-height:520px) and (pointer:coarse)").matches;
+    if(st&&(REDUCE||stillMode||mobileEnd)){
+      st.classList.add("on"); if(ev) ev.style.display="none";
+      if(load) load.hidden=true;
+      if(rep) rep.style.setProperty("display","none","important"); return;
+    }
     if(!ev) return;
-    var reset=function(){
-      if(st) st.classList.remove("on");
-      if(rep) rep.classList.remove("on");
-    };
+    /* 桌面：视频缓冲时显示海报 + 加载提示；起播后隐藏提示。不盖 QR 静帧，避免像定格图 */
+    if(load) load.hidden=false;
+    if(rep) rep.style.setProperty("display","none","important");
+    var srcHevc=ev.getAttribute("data-src-hevc")||"",
+        src4k=ev.getAttribute("data-src-4k")||"",
+        srcMid=ev.getAttribute("data-src-mid")||"",
+        srcNarrow=ev.getAttribute("data-src-narrow")||"";
+    var canHevc=!!ev.canPlayType&&ev.canPlayType('video/mp4; codecs="hvc1"')!=="";
+    var loaded=false, triedFallback=false;
+    function pickSrc(){
+      var c=navigator.connection||{};
+      var vw=window.innerWidth;
+      if(c.saveData||/(^|-)2g$/.test(c.effectiveType||"")||vw<=760)
+        return srcNarrow||srcMid||src4k||srcHevc;
+      if(vw<=1180) return srcMid||src4k||srcNarrow||srcHevc;
+      if(canHevc&&srcHevc) return srcHevc;
+      return src4k||srcMid||srcNarrow||srcHevc;
+    }
+    function loadSrc(){
+      if(loaded) return;
+      var s=pickSrc();
+      if(!s) return;
+      loaded=true;
+      if(ev.getAttribute("src")!==s){ ev.setAttribute("src",s); ev.load(); }
+    }
+    function reset(){
+      if(rep){ rep.classList.remove("on"); rep.style.setProperty("display","none","important"); }
+    }
     ev.addEventListener("play",reset);
-    ev.addEventListener("ended",function(){ if(rep) rep.classList.add("on"); });
-    ev.addEventListener("error",function(){ if(st) st.classList.add("on"); ev.style.display="none"; });
+    ev.addEventListener("playing",function(){ if(load) load.hidden=true; });
+    ev.addEventListener("waiting",function(){ if(load) load.hidden=false; });
+    ev.addEventListener("ended",function(){
+      if(load) load.hidden=true;
+      if(rep){ rep.style.removeProperty("display"); rep.classList.add("on"); }
+    });
+    function fallback4k(){
+      /* HEVC 声明支持但实际解不了：回退到 4K H.264，再失败才用静帧 */
+      if(triedFallback || ev.getAttribute("src")!==srcHevc || !src4k) return false;
+      triedFallback=true;
+      ev.setAttribute("src",src4k); ev.load();
+      var p=ev.play(); if(p&&p.catch) p.catch(function(){});
+      return true;
+    }
+    ev.addEventListener("loadedmetadata",function(){ if(!ev.videoWidth) fallback4k(); });
+    ev.addEventListener("error",function(){
+      if(fallback4k()) return;
+      if(load) load.hidden=true;
+      if(st) st.classList.add("on"); ev.style.display="none";
+    });
     if(rep) rep.addEventListener("click",function(){
       reset();
       try{ ev.currentTime=0; }catch(_){}
       var p=ev.play(); if(p&&p.catch) p.catch(function(){});
     });
-    var play=function(){ var p=ev.play(); if(p&&p.catch) p.catch(function(){}); };
+    function play(){ loadSrc(); var p=ev.play(); if(p&&p.catch) p.catch(function(){}); }
     if("IntersectionObserver" in window){
+      var lio=new IntersectionObserver(function(es){
+        for(var i=0;i<es.length;i++){ if(es[i].isIntersecting){ loadSrc(); lio.disconnect(); return; } }
+      },{rootMargin:"150% 0px"});
+      lio.observe(ev);
       new IntersectionObserver(function(es){
         es.forEach(function(e){ if(e.isIntersecting) play(); else ev.pause(); });
       },{threshold:.55}).observe(ev);
-    } else { play(); }
+    } else { loadSrc(); play(); }
   })();
 
   /* 尾页进入视口时：ORB 移到右上角常驻；底部 HUD 收起 */
