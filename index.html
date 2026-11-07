@@ -4731,6 +4731,7 @@ html,body{width:100%;max-width:none}
     background:linear-gradient(0deg,#f7eee5,rgba(247,238,229,0))}
 }
 </style>
+<link rel="stylesheet" href="character-widget/CharacterWidget.css">
 </head>
 <body>
 <a class="skip" href="#main">跳到主要内容</a>
@@ -4826,7 +4827,17 @@ html,body{width:100%;max-width:none}
   <section class="hero hero-home" id="s0" aria-labelledby="hero-title">
     <div class="hero-frame">
       <div class="hero-media" aria-hidden="true">
-        <img class="hero-still" src="assets/home/hero-final.jpg" alt="" width="2048" height="1152" decoding="eager" fetchpriority="high">
+        <div class="cw-root" data-character-widget data-cw-video="#hv" data-cw-track="#s0" aria-hidden="true">
+          <img class="cw-layer" data-cw="white" src="character-widget/assets/eye-white.webp" alt="" draggable="false">
+          <img class="cw-layer cw-iris" data-cw="iris-left" src="character-widget/assets/iris-left.webp" alt="" draggable="false">
+          <img class="cw-layer cw-iris" data-cw="iris-right" src="character-widget/assets/iris-right.webp" alt="" draggable="false">
+          <img class="cw-layer" data-cw="shadow" src="character-widget/assets/eye-shadow.webp" alt="" draggable="false">
+          <img class="cw-layer" data-cw="character" src="character-widget/assets/character-clean.webp" alt="" draggable="false">
+          <img class="cw-layer cw-blink" data-cw="blink-1" src="character-widget/assets/blink-01.webp" alt="" draggable="false" hidden>
+          <img class="cw-layer cw-blink" data-cw="blink-2" src="character-widget/assets/blink-02.webp" alt="" draggable="false" hidden>
+          <img class="cw-layer cw-blink" data-cw="blink-3" src="character-widget/assets/blink-03.webp" alt="" draggable="false" hidden>
+          <img class="cw-layer cw-blink" data-cw="blink-4" src="character-widget/assets/blink-04.webp" alt="" draggable="false" hidden>
+        </div>
         <video class="hv" id="hv" muted playsinline preload="none" poster="assets/home/hero-final.jpg">
           <source id="hvsrc" src="assets/hero-4k.mp4" type="video/mp4">
         </video>
@@ -7821,5 +7832,6 @@ html,body{width:100%;max-width:none}
 </script>
 
 
+<script src="character-widget/CharacterWidget.js"></script>
 </body>
 </html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CharacterWidget v1.0 · 本地验证</title>
+<link rel="stylesheet" href="CharacterWidget.css">
+<style>
+  :root{color-scheme:light;font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+  *{box-sizing:border-box}
+  body{margin:0;background:#17151c;color:#f5f2ea;min-height:100vh}
+  main{max-width:1360px;margin:0 auto;padding:24px 20px 48px}
+  header{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+  h1{font-size:20px;margin:0;letter-spacing:.02em}
+  header p{margin:4px 0 0;color:#b9b2a6;font-size:13px}
+  .badge{font-size:11px;letter-spacing:.14em;color:#ffb38d;border:1px solid #5a4a3d;border-radius:999px;padding:7px 11px}
+  .cw-stage{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#f7eee5;box-shadow:0 20px 60px #0008;touch-action:pan-y;cursor:crosshair}
+  .cw-root{--cw-pos:center 42%}
+  .tools{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:14px}
+  button{font:inherit;font-size:13px;cursor:pointer;background:#2c2933;border:1px solid #4b4658;color:#f4f0e8;border-radius:8px;padding:9px 13px}
+  button:hover{border-color:#b9a8ff}
+  button.main{background:#6f5cc0;border-color:#9b86ee}
+  label{display:flex;align-items:center;gap:7px;font-size:13px;color:#d8d2c7}
+  input{accent-color:#ad96ff}
+  #cwStatus{margin-left:auto;font-size:12px;letter-spacing:.08em;color:#b9b2a6;font-variant-numeric:tabular-nums}
+  .hint{color:#8f887d;font-size:12px;line-height:1.7;margin-top:10px}
+  @media (max-width:640px){main{padding:16px 10px 32px}.cw-stage{border-radius:8px}.tools{gap:7px}button{padding:8px 10px}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>CharacterWidget v1.0</h1>
+      <p>五层合成 · 2730×1536 · 视线跟随 / 自动眨眼 / 双眨眼 / 闲置微视线</p>
+    </div>
+    <span class="badge">LOCAL QA</span>
+  </header>
+
+  <div class="cw-stage" id="cwStage">
+    <div class="cw-root" data-character-widget data-cw-track="#cwStage" aria-hidden="true">
+      <img class="cw-layer" data-cw="white" src="assets/eye-white.webp" alt="" draggable="false">
+      <img class="cw-layer cw-iris" data-cw="iris-left" src="assets/iris-left.webp" alt="" draggable="false">
+      <img class="cw-layer cw-iris" data-cw="iris-right" src="assets/iris-right.webp" alt="" draggable="false">
+      <img class="cw-layer" data-cw="shadow" src="assets/eye-shadow.webp" alt="" draggable="false">
+      <img class="cw-layer" data-cw="character" src="assets/character-clean.webp" alt="" draggable="false">
+      <img class="cw-layer cw-blink" data-cw="blink-1" src="assets/blink-01.webp" alt="" draggable="false" hidden>
+      <img class="cw-layer cw-blink" data-cw="blink-2" src="assets/blink-02.webp" alt="" draggable="false" hidden>
+      <img class="cw-layer cw-blink" data-cw="blink-3" src="assets/blink-03.webp" alt="" draggable="false" hidden>
+      <img class="cw-layer cw-blink" data-cw="blink-4" src="assets/blink-04.webp" alt="" draggable="false" hidden>
+    </div>
+  </div>
+
+  <div class="tools">
+    <button class="main" data-act="blink">眨眼一次</button>
+    <button data-act="double">双眨眼</button>
+    <label><input type="checkbox" data-opt="gaze" checked>视线跟随</label>
+    <label><input type="checkbox" data-opt="idle" checked>闲置微视线</label>
+    <span id="cwStatus">ready</span>
+  </div>
+  <p class="hint">鼠标在画面内移动：眼球跟随；停止 2.2s 后偶尔出现 ±1px 的自然偏移；点击画面眨眼。移动端触摸位置驱动视线，纵向滑动不拦截。</p>
+</main>
+
+<script src="CharacterWidget.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var root = document.querySelector('[data-character-widget]');
+  var cw = root && root.__cw;
+  var status = document.getElementById('cwStatus');
+  if (!cw) { status.textContent = 'init failed'; return; }
+
+  var gaze = document.querySelector('[data-opt="gaze"]');
+  var idle = document.querySelector('[data-opt="idle"]');
+  gaze.addEventListener('change', function () { cw.opts.gazeTracking = gaze.checked; });
+  idle.addEventListener('change', function () { cw.opts.idleGaze = idle.checked; });
+
+  document.querySelector('[data-act="blink"]').addEventListener('click', function () { cw.blink(false); });
+  document.querySelector('[data-act="double"]').addEventListener('click', function () { cw.blink(true); });
+
+  setInterval(function () {
+    status.textContent = 'frame ' + cw.current + ' · scale ' + cw.scale.toFixed(3) +
+      ' · pos ' + cw.posX.toFixed(2) + ',' + cw.posY.toFixed(2);
+  }, 250);
+});
+</script>
+</body>
+</html>
